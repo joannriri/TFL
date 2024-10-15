@@ -8,54 +8,55 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/TFL.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand- lg navbar-light bg-light custom-navbar">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <!-- left link-->
-                <div class="navbar-collapse collapse justify-content-start" id="navbarleft">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">New Arrivals</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="#">Cotton</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="#">Florals</a>
-                        </li>
-                    </ul>
-                </div>
-                <!--Center logo-->
-                <a class="navbar-brand mx-auto" asp-area="" asp-controller="Home" asp-action="Index">
-                    <img src="" alt="TFL" class="logo" />
-                </a>
-                <!--right side
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                -->
-                <div class="navbar-collapse collapse justify-content-end" id="navbarRight">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="#">Exclusives</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="#">Limited Editions</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="#">Sale</a>
-                        </li>
-                    </ul>
-                    <!--search, favorite, cart icon-->
-                    <div class="navbar-icons">
-                        <a href="#" class="nav-link"><i class="fas fa-search"</i></a>
-                        <a href="#" class="nav-link"><i class="fas fa-heart"</i></a>
-                        <a href="#" class="nav-link"><i class="fas fa-shopping-cart"</i></a>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <div class="navbar-user-container d-flex flex-column align-items-start me-3">
+                        <img src="/img/Icon.png" alt="userIcon" class="user-icon-img" />
+                        <ul class="navbar-nav me-auto d-flex align-items-center">
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">New Arrivals</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Cotton">Cotton</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Florals">Florals</a>
+                            </li>
+                        </ul>
                     </div>
+                    <!--center logo-->
+                    <a class="navbar-logo mx-auto href="#">
+                        <img src="/img/tfl_logo.png" alt="logo" class="navbar-logo-img" />
+                    </a>
+                    <div class="navbar-icons-container d-flex flex-column align-items-end ms-3">
+                        <div class="navbar-icons d-flex">
+                            <img src="~/img/Search.png" alt="icon1" class="navbar-icon" />
+                            <img src="/img/Heart.png" alt="icon2" class="navbar-icon" />
+                            <img src="~/img/bag.png" alt="icon3" class="navbar-icon" />
+                        </div>
+                        <ul class="navbar-nav ms-auto d-flex align-items-center">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Exclusives">Exclusives</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Limited Editions">Limited Editions</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Sale">Sale</a>
+                            </li>
+                        </ul>
+                    </div>                 
                 </div>
             </div>
         </nav>
@@ -65,10 +66,55 @@
             @RenderBody()
         </main>
     </div>
-    <!--footer-->
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted pt-4 pb-4">
         <div class="container">
-            &copy; 2024 - TFL - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <div class="row">
+                <!--left-->
+                <div class="col-md-6 d-flex flex-column align-items-start">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="/img/tfl_logo.png" alt="logo" class="footer-logo" />
+                        <span> Elevate your wardrobe and express <br />
+                            your individuality with our unique styles.<br />
+                            Shop with us today!</span>
+                    </div>
+                    <div class="d-flex mb-2">
+                        <a href="#" class="mr-3"><img src="/img/fb.png" alt="fb" style="width: 24px; height: 24px;" /></a>
+                        <a href="#" class="mr-3"><img src="/img/ig.png" alt="ig" style="width: 24px; height: 24px;" /></a>
+                        <a href="#" class="mr-3"><img src="/img/message.png" alt="msg" style="width: 24px; height: 24px;" /></a>
+                    </div>
+                    <small class="copyright">&copy; 2024 - TheFabricsLab</small>
+                </div>
+                <!--right-->
+                <div class="col-md-6 d-flex">
+                    <div class="w-50 pe-3">
+                        <h5>Explore</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Profile</a></li>
+                            <li><a href="#">About Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="w-50 d-flex flex-column">
+                        <h5>Shop</h5>
+                        <div class="d-flex justify-content-between">
+                            <div class="w-50">
+                                <ul class="list-unstyled">
+                                    <li><a href="#">New Arrival</a></li>
+                                    <li><a href="#">Cotton</a></li>
+                                    <li><a href="#">Floral</a></li>
+                                </ul>
+                            </div>
+                            <div class="w-50">
+                                <ul class="list-unstyled">
+                                    <li><a href="#">Exclusives</a></li>
+                                    <li><a href="#">Limited Edition</a></li>
+                                    <li><a href="#">Sales</a></li>
+                                </ul>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>            
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
