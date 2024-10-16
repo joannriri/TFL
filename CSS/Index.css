@@ -1,0 +1,230 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+body {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    background-color: #02333A;
+    color: white;
+}
+
+.carousel {
+    position: relative;
+    max-width: 100%; 
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    display: none; /* Hide all slides initially */
+    min-width: 100%; /* Each item takes the full width */
+    box-sizing: border-box;
+}
+
+    .carousel-item.active {
+        display: block; /* Only the active slide should be displayed */
+    }
+
+    .carousel-item img {
+        width: 100%; /* Full width */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+.carousel-caption {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; 
+    text-align: center;
+}
+
+    .carousel-caption h1 {
+        font-size: 3rem; /* Adjust the size as needed */
+        font-family: 'Playfair Display', serif; 
+    }
+
+    .carousel-caption p {
+        font-size: 1.5rem; 
+    }
+
+.shop-button {
+    background-color: transparent; /* Button background color */
+    color: white; /* Button text color */
+    padding: 10px 20px;
+    border: 2px solid white;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Control button background */
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+    z-index: 1000;
+    justify-content: center;
+    align-items:center;
+}
+
+    .carousel-indicators button {
+        background-color: #ccc; /* Inactive indicator color */
+        border: none;
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+        cursor: pointer;
+    }
+
+        .carousel-indicators button.active {
+            background-color: #02333A; /* Active indicator color */
+        }
+
+/*Product Category Section*/
+.product-categories {
+    text-align: center;
+    margin: 40px 0;
+    color: white;
+}
+
+    .product-categories h2 {
+        font-size: 3rem;
+        margin: 20px 0;
+        font-family: 'Allura', cursive;
+        color: white;
+
+    }
+
+.category-container {
+    display: flex;
+    gap: 0; /* Remove gaps between images */
+    justify-content: center;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    overflow: hidden;
+}
+
+.category-item {
+    position: relative;
+    flex: 1; /* Each image takes equal space */
+}
+
+    .category-item img {
+        width: 100%;
+        height: auto;
+        object-fit: cover; /* Ensures the image fits the container */
+        display: block;
+    }
+
+.category-text {
+    position: absolute;
+    bottom: 10px; /* Adjust positioning as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    padding: 5px 10px;
+    font-size: 1.2rem;
+    font-family: 'Allura', cursive;
+    text-align: center;
+    width: 100%;
+}
+
+/* Style Catalogue Section */
+.style-catalogue {
+    text-align: center;
+    margin: 40px 0;
+    color: white;
+}
+
+    .style-catalogue h2 {
+        font-size: 3rem;
+        margin: 20px 0;
+        font-family: 'Allura', cursive;
+        color: white;
+    }
+
+.style-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    overflow: hidden; /* Hide overflow */
+}
+
+.style-item {
+    position: relative;
+    flex: 0 0 22%; /* Adjust the width of each image */
+    margin: 0; /* Remove margin to eliminate gaps */
+}
+
+    .style-item img {
+        width: 100%; /* Full width of the parent */
+        height: auto; /* Maintain aspect ratio */
+        object-fit: cover; /* Ensures the image fits the container */
+        display: block;
+    }
+
+.style-text {
+    position: absolute;
+    bottom: 10px; /* Adjust positioning as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    padding: 5px 10px;
+    font-size: 1.2rem;
+    font-family: 'Allura', cursive;
+    text-align: center;
+    width: 100%;
+}
+
+/*Banner Section*/
+.banner-section {
+    position: relative;
+    background-image: url('/img/PhotoShoot/Banner.jpg'); 
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the image */
+    height: 400px; 
+    width: 100%;
+    display: flex; /* Use flexbox for centering */
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    text-align: center; /* Center text */
+    color: white; /* Text color */
+    margin: 0;
+    padding: 0;
+}
+
+.banner-content h1 {
+    font-size: 4rem; 
+    font-family: 'Allura', cursive; 
+    margin: 0; /* Remove default margin */
+}
+
+.banner-content p {
+    font-size: 1.5rem; 
+    margin: 10px 0; /* Margin for spacing */
+}
