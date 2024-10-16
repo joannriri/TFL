@@ -172,7 +172,28 @@ footer {
     color: white !important;
 }
 
+/*5651*/
 #center {
     width: 50%;
     margin: 0 auto;
+}
+
+
+@media screen and (max-width: 992px){
+    header{
+        position: relative;
+        width: 100%;
+    }
+    header ul{
+        margin-top: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    header ul li{
+        margin: 3px;
+    }
+    header ul li a{
+        display: inline-block;
+        font-size: 1em;
+    }
 }
