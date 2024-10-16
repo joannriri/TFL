@@ -1,10 +1,13 @@
+
 html {
     font-size: 14px;
+    max-width: 10000px;
 }
 
 @media (min-width: 768px) {
     html {
         font-size: 16px;
+        max-width: 10000px;
     }
 }
 
@@ -18,16 +21,19 @@ html {
 
 html {
     position: relative;
-    min-height: 100%;
+    /*min-height: 100%;*/
+    max-width: 10000px;
 }
 
 body {
     margin-bottom: 60px;
+    max-width: 10000px;
 }
 
 /* Navbar */
 .navbar {
     background: linear-gradient(to right, #A89060, #0C797C);
+    max-width: 10000px;
 }
 
     /* Apply fonts */
@@ -75,10 +81,11 @@ body {
     display: flex;
     justify-content: center; /* Center the links */
     padding: 0; /* Remove padding */
+    max-width: 10000px;
 }
 
 .navbar .nav-item {
-    margin: 0 25px; /* Adjust margin for bigger gaps */
+    margin: 0; /* Adjust margin for bigger gaps */
 }
 
 /* User Icon */
@@ -100,6 +107,7 @@ body {
     display: flex;
     align-items: center;
     margin-left: 20px; /* Pull closer to center */
+    max-width: 10000px;
 }
 
 .navbar-icons {
@@ -117,6 +125,7 @@ body {
     .navbar-nav {
         flex-direction: row; /* Keep links in a row on larger screens */
         justify-content: center; /* Center links */
+        max-width: 10000px;
     }
 
     /* Adjust the last item margin */
@@ -161,4 +170,33 @@ footer {
 
 .copyright {
     color: white !important;
+}
+
+/*5651*/
+#center {
+    width: 50%;
+    margin: 0 auto;
+}
+
+
+@media screen and (max-width: 992px) {
+    header {
+        position: relative;
+        width: 100%;
+    }
+
+        header ul {
+            margin-top: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+            header ul li {
+                margin: 3px;
+            }
+
+                header ul li a {
+                    display: inline-block;
+                    font-size: 1em;
+                }
 }
