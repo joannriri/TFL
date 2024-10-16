@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - layoutDEMO</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/layoutDEMO.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-logo mx-auto href="#">
+                    <img src="/img/tfl_logo.png" alt="logo" class="navbar-logo-img" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <div class="navbar-user-container d-flex flex-column align-items-start me-3" id="center">
+                        
+                        <ul class="navbar-nav me-auto d-flex align-items-center">
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">New Arrivals</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Cotton">Cotton</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Florals">Florals</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Exclusives">Exclusives</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Limited Editions">Limited Editions</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Sale">Sale</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--center logo-->
+                    
+                    <div class="navbar-icons-container d-flex flex-column align-items-end ms-3">
+                        <div class="navbar-icons d-flex">
+                            <ul class="navbar-nav">
+                                
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Search">
+                                        <img src="/img/User.png" alt="userIcon" class="user-icon-img" />
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Search">
+                                        <img src="~/img/Search.png" alt="icon1" class="navbar-icon" />
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Favourites">
+                                        <img src="/img/Heart.png" alt="icon2" class="navbar-icon" />
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Cart">
+                                        <img src="~/img/ShoppingBag.png alt="icon3" class="navbar-icon" />
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            <div class="row">
+                <!--left-->
+                <div class="col-md-6 d-flex flex-column align-items-start">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="/img/tfl_logo.png" alt="logo" class="footer-logo" />
+                        <span>
+                            Elevate your wardrobe and express <br />
+                            your individuality with our unique styles.<br />
+                            Shop with us today!
+                        </span>
+                    </div>
+                    <div class="d-flex mb-2">
+                        <a href="#" class="mr-3"><img src="/img/facebook_.png" alt="fb" style="width: 24px; height: 24px;" /></a>
+                        <a href="#" class="mr-3"><img src="/img/instagram_.png" alt="ig" style="width: 24px; height: 24px;" /></a>
+                        <a href="#" class="mr-3"><img src="/img/imessage_.png" alt="msg" style="width: 24px; height: 24px;" /></a>
+                    </div>
+                    <small class="copyright">&copy; 2024 - TheFabricsLab</small>
+                </div>
+                <!--right-->
+                <div class="col-md-6 d-flex">
+                    <div class="w-50 pe-3">
+                        <h5>Explore</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Profile</a></li>
+                            <li><a href="#">About Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="w-50 d-flex flex-column">
+                        <h5>Shop</h5>
+                        <div class="d-flex justify-content-between">
+                            <div class="w-50">
+                                <ul class="list-unstyled">
+                                    <li><a href="#">New Arrival</a></li>
+                                    <li><a href="#">Cotton</a></li>
+                                    <li><a href="#">Floral</a></li>
+                                </ul>
+                            </div>
+                            <div class="w-50">
+                                <ul class="list-unstyled">
+                                    <li><a href="#">Exclusives</a></li>
+                                    <li><a href="#">Limited Edition</a></li>
+                                    <li><a href="#">Sales</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
