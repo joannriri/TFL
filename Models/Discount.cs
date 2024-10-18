@@ -10,7 +10,7 @@ namespace TFL.Models
         public string Name { get; set; }
         [Precision(16, 2)]
         public decimal DiscountPercent { get; set; }
-        
+
         public Boolean Active { get; set; }
         public DateTime CreatedAt { get; set; }
     }
