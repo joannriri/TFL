@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace TFL.Models
 {
@@ -12,7 +12,7 @@ namespace TFL.Models
         public int CategoryID { get; set; }
         [ForeignKey("CategoryID")]
         public virtual ProductCategory ProductCategory { get; set; }
-        [Precision(16,2)]
+        [Precision(16, 2)]
         public decimal ProductPrice { get; set; }
         public string Description { get; set; }
         public string ImageFile { get; set; }
@@ -22,8 +22,7 @@ namespace TFL.Models
         public int DiscountID { get; set; }
         [ForeignKey("DiscountID")]
         public virtual Discount Discount { get; set; }
-
-
+        public int Stock { get; set; }
 
     }
 }
