@@ -1,6 +1,6 @@
-using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace TFL.Models
 {
@@ -9,7 +9,7 @@ namespace TFL.Models
         [Key]
         public int OrderID { get; set; }
         public DateTime OrderDate { get; set; }
-        [Precision(16,2)]
+        [Precision(16, 2)]
         public decimal OrderTotal { get; set; }
         [Required]
         [ScaffoldColumn(false)]
