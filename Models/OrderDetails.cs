@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace TFL.Models
 {
@@ -13,7 +13,7 @@ namespace TFL.Models
         [ForeignKey("ProductID")]
         public virtual Product Product { get; set; }
         public int Quantity { get; set; }
-        [Precision(16,2)]
+        [Precision(16, 2)]
         public decimal UnitPrice { get; set; }
     }
 }
