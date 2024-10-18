@@ -1,6 +1,6 @@
-using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace TFL.Models
 {
@@ -15,12 +15,13 @@ namespace TFL.Models
 
         public string ProductName { get; set; }
         public int Quantity { get; set; }
-        [Precision(16,2)]
+        [Precision(16, 2)]
         public decimal Price { get; set; }
-        [Precision(16,2)]
-        public decimal Total {
+        [Precision(16, 2)]
+        public decimal Total
+        {
             get { return Quantity * Price; }
-        
+
         }
         public string Image { get; set; }
         public Cart()
@@ -36,8 +37,8 @@ namespace TFL.Models
             Image = product.ImageFile;
 
         }
-        
-        
+
+
 
     }
 }
