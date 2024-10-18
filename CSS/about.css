@@ -1,0 +1,107 @@
+﻿body {
+    background-color: #02333A;
+}
+/*styles entire page*/
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+/*BANNER*/
+.banner-container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+#banner {
+    width: 100%;
+}
+
+.banner-text {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    transform: translate(5%, 0%);
+    font-size: 600%;
+    font-family: Yeseva One;
+}
+
+/*TWO COLUMNS*/
+.column-a {
+    float: left;
+    width: 50%;
+    padding: 60px;
+    background-color: #0C2324;
+}
+
+.column-b {
+    float: left;
+    width: 50%;
+    padding: 50px;
+    background-color: #A89060;
+    text-align: justify;
+    width: 50%;
+    color: whitesmoke;
+    box-shadow: inset 0px 0px 20px 0px rgba(0,0,0,1);
+}
+
+/*GOOGLE MAP*/
+iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*CONTACT AREA*/
+.icons {
+    height: 80px;
+    width: 80px;
+}
+
+#closed {
+    color: red;
+}
+
+h1 {
+    font-family: 'Forum';
+}
+
+.contact-info {
+    color: white;
+    font-family: 'Playfair Display';
+    text-align: center;
+    background-color: #02333A;
+}
+
+    .contact-info:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+.bottom-three {
+    float: left;
+    width: 33.33%;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .bottom-three {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
