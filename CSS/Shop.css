@@ -1,0 +1,105 @@
+﻿body {
+    font-family: 'Noto Serif', serif;
+    background-color: #02333A;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.page-title {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.filter-sort-section {
+    margin-bottom: 20px;
+}
+
+.top-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: transparent;
+}
+
+.filter-sort {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+    .filter-sort img {
+        margin-right: 8px;
+    }
+
+.product-count {
+    font-size: 1rem;
+    color: #fff;
+}
+
+#filter-sort {
+    display: none;
+    margin-top: 10px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.product-card {
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    text-align: center;
+}
+
+    .product-card img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .product-card h4 {
+        margin: 10px 0 0 0;
+        font-family: 'Allura', cursive;
+        color: #fff;
+    }
+
+    .product-card p {
+        margin: 5px 0;
+        color: #fff;
+    }
+
+    .product-card h4,
+    .product-card p {
+        font-family: 'Forum';
+        position: relative;
+        color: #fff;
+        padding: 5px;
+        margin: 0;
+    }
+
+/* Add to Cart */
+.add-to-cart {
+    position: absolute; /* Position relative to the nearest positioned ancestor */
+    bottom: 10px; /* Position it a little above the bottom */
+    left: 50%;
+    transform: translate(-50%, 0); /* Center it horizontally */
+    color: #fff; /* Text color */
+    background-color: rgba(12, 121, 124, 0.8); /* Semi-transparent background */
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: none; /* Initially hide the text */
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.3s ease, display 0.3s ease; /* Smooth transition */
+    z-index: 10;
+}
+
+.product-card:hover .add-to-cart {
+    display: block; /* Show the button on hover */
+    opacity: 1; /* Fade in */
+}
