@@ -3,7 +3,8 @@ use TFL
 INSERT INTO Category (Name, CreatedAt) VALUES 
 ('Cotton', GETDATE()),
 ('Exclusives', GETDATE()),
-('Seasonals', GETDATE())
+('Seasonal Genevieve', GETDATE()),
+('Seasonal Qalbi', GETDATE())
 ;
 
 INSERT INTO Discounts(Name, DiscountPercent, Active, CreatedAt) VALUES 
@@ -14,23 +15,24 @@ INSERT INTO Discounts(Name, DiscountPercent, Active, CreatedAt) VALUES
 ;
 
 DELETE FROM Category;
+DELETE FROM Products;
 
 SELECT * FROM Category
 SELECT * FROM Discounts
 SELECT * FROM Products
 INSERT INTO Products (ProductName, CategoryID, ProductPrice, Description, ImageFile, CreatedAt, DiscountID, Stock) VALUES 
-('Adelaide Collection',3, 30.00, 'Silk Ribbon x Lines Shawl', 'black.JPG', GETDATE(),1,50),
-('Blair Collection',3, 30.00, 'Vintage Ribbon Shawl', 'Grey.JPG', GETDATE(),1,50),
-('Camille Collection',3,30.00, 'Criss Crossed Ribbon','Light Pink.jpeg', GETDATE(),1,50),
-('Delilah Collection', 3, 30.00, 'Elegant Bows', 'Teal.JPG',GETDATE(),1,50),
-('Evangeline Collection',3,30.00,'Floral Embrace','Nude Pink.JPG', GETDATE(),1,50),
-('Felicia Collection',3,30.00,'Soft Satin Swirls','blue & white.JPG', GETDATE(),1,50),
-('Isadora Collection',3,30.00,'Blossoms & Bows','Pastel blue.JPG', GETDATE(),1,50),
-('Ophelia Collection',3,30.00,'Wrapped in Bloom', 'Dark blue.JPG', GETDATE(),1,50),
-('Sirena Collection',3,30.00,'Bows Over Denim','Blue jeans.JPG', GETDATE(),1,50),
-('Ruhi Collection',3, 28.00, 'Abstract Floral Pattern Scarf','Light Pink Mtrl.jpeg', GETDATE(),1,50 ),
-('Sanadi Collection',3, 28.00,'Hearts and Polka Dots Scarf', 'Light Blue Mtrl.jpeg', GETDATE(),1,50),
-('Helwa Collection',3, 28.00, 'Leaf Scarf', 'Beige Mtrl.jpeg', GETDATE(),1,50),
-('Hayati Collection',3,28.00,'Chained Hearts Scarf', 'Light Blue Mtrl.jpeg', GETDATE(),1,50),
-('Eyuni Collection',3, 28.00,'Heart-Dotted Scarf','Light Pink Mtrl.jpeg', GETDATE(),1,50)
+('Adelaide Collection',1004, 30.00, 'Silk Ribbon x Lines Shawl', 'Adelaide_black_mtrl.JPG', GETDATE(),1,50),
+('Blair Collection',1004, 30.00, 'Vintage Ribbon Shawl', 'Blair_Grey_mtrl.JPG', GETDATE(),1,50),
+('Camille Collection',1004,30.00, 'Criss Crossed Ribbon','Camille_lightpink_mtrl.jpeg', GETDATE(),1,50),
+('Delilah Collection', 1004, 30.00, 'Elegant Bows', 'Delilah_teal_mtrl.JPG',GETDATE(),1,50),
+('Evangeline Collection',1004,30.00,'Floral Embrace','Evangeline_nudepink_mtrl.JPG', GETDATE(),1,50),
+('Felicia Collection',1004,30.00,'Soft Satin Swirls','Felicia_blue&white_mtrl.JPG', GETDATE(),1,50),
+('Isadora Collection',1004,30.00,'Blossoms & Bows','Isadora_pastelblue_mtrl.JPG', GETDATE(),1,50),
+('Ophelia Collection',1004,30.00,'Wrapped in Bloom', 'Ophelia_darkblue_mtrl.JPG', GETDATE(),1,50),
+('Sirena Collection',1004,30.00,'Bows Over Denim','Sirena_bluejeans_mtrl.JPG', GETDATE(),1,50),
+('Ruhi Collection',1005, 28.00, 'Abstract Floral Pattern Scarf','Ruhi_ lightpink_mtrl.jpeg', GETDATE(),1,50 ),
+('Sanadi Collection',1005, 28.00,'Hearts and Polka Dots Scarf', 'Sanadi_lightblue_mtrl.jpeg', GETDATE(),1,50),
+('Helwa Collection',1005, 28.00, 'Leaf Scarf', 'Helwa_beige_mtrl.jpeg', GETDATE(),1,50),
+('Hayati Collection',1005,28.00,'Chained Hearts Scarf', 'Hayati_lightblue_mtrl.jpeg', GETDATE(),1,50),
+('Eyuni Collection',1005, 28.00,'Heart-Dotted Scarf','Eyuni_lightpink_mtrl.jpeg', GETDATE(),1,50)
 ;
