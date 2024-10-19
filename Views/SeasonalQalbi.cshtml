@@ -1,0 +1,102 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/Shop.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+    <title>Shop - Seasonal - Qalbi Series</title>
+</head>
+<body>
+    <div class="filter-sort-section">
+        <h1 class="page-title">Qalbi Series</h1>
+        <div class="top-controls">
+            <div class="filter-sort" id="filter-toggle" style="cursor:pointer;">
+                <img src="~/img/icons/Filter.png" alt="filtericon" />
+                <span>FILTER AND SORT</span>
+            </div>
+            <div id="filter-sort" style="display:none;">
+                <form id="filter-form" method="get" action="/Shop/SeasonalQalbi">
+                    <!--Stock Filter-->
+                    <div>
+                        <label>
+                            <input type="checkbox" name="inStock" value="true" /> In Stock
+                        </label>
+                        <label>
+                            <input type="checkbox" name="outOfStock" value="true" /> Out of Stock
+                        </label>
+                    </div>
+                    <!--Discount Filter-->
+                    <select name="DiscountID">
+                        <option value="">Select Discount</option>
+                        <option value="1">Non Discounted Items</option>
+                        <option value="2">15% off</option>
+                        <option value="3">20% off</option>
+                        <option value="4">50% off</option>
+                    </select>
+
+                    <!--Sorting options-->
+                    <select name="sortOrder">
+                        <option value="">Sort By</option>
+                        <option value="name_asc">Name (A-Z)</option>
+                        <option value="name_desc">Name (Z-A)</option>
+                        <option value="price_asc">Price (Low to High)</option>
+                        <option value="price_desc">Price (High to Low)</option>
+                    </select>
+                    <button type="submit"> Apply </button>
+                </form>
+
+                <!--Product Count -->
+                <div class="product-count">
+                    <span>@ViewBag.ProductCount Products</span>
+                </div>
+            </div>
+        </div>
+        <!--Product Cards-->
+        <div class="product-grid">
+            @foreach (var product in Model)
+            {
+                if (product.CategoryID == 1005)
+                {
+                    <div class="product-card">
+                        <!-- Displays product image with corrected path -->
+                        <img src="@Url.Content("~/img/Seasonal/Qalbi/" + product.ImageFile)" alt="@product.ProductName" />
+                        <div class="add-to-cart">Add to Cart</div>
+                        <!-- Displays product name and price -->
+                        <h4>@product.ProductName</h4>
+                        <p>@product.ProductPrice.ToString("C")</p>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <script src="/js/Shop.js"></script>
+</body>
+</html>
