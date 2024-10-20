@@ -4,12 +4,15 @@
     ViewData["Title"] = "Register";
 }
 
-<h1>@ViewData["Title"]</h1>
+<link rel="stylesheet" href="/css/register.css" asp-append-version="true"></link>
+
+
 
 <div class="row">
-    <div class="col-md-4">
-        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <h2>Create a new account.</h2>
+    <div class="col-lg-6 mx-auto p-3">
+        <form id="registerForm" class="form" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+            <h1>CREATE AN ACCOUNT</h1>
+            <p>Please fill in your information to sign up. If you already have an account, please log in.</p>
             <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
             <div class="form-floating mb-3">
@@ -47,19 +50,84 @@
                 <label asp-for="Input.PhoneNumber">Phone Number</label>
                 <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
             </div>
-            <label asp-for="Input.Gender">Gender</label>
-            <div class="form-floating mb-3">
-                Male
-                <input asp-for="Input.Gender" name="Gender" value="Male" type="radio">
-                <span asp-validation-for="Input.Gender" class="text-danger"></span>
-                Female
-                <input asp-for="Input.Gender" name="Gender" value="Female" type="radio">
-                <span asp-validation-for="Input.Gender" class="text-danger"></span>
+            <div class="checkbox mb-3" id="newsletter">
+                <label asp-for="Input.NewsletterSubscription" class="form-label">
+                    <input class="form-check-input" asp-for="Input.NewsletterSubscription" />&nbsp;
+                    @Html.DisplayNameFor(m => m.Input.NewsletterSubscription)
+                </label>
             </div>
-            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
+            <button id="registerSubmit" type="submit" class="btn-lg create">Create an Account</button>
+            <br>
+            <br>
+            <p>Already have an account? <a class="login-link" asp-area="Identity" asp-page="/Account/Login">Login</a></p>
+            <br>
+            <br>
+            <br>
+            <p>By creating your account or signing in, you agree to our Terms of Service & Privacy Policy</p>
         </form>
     </div>
-    <div class="col-md-6 col-md-offset-2">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+   @*  <div class="col-md-6 col-md-offset-2">
         <section>
             <h3>Use another service to register.</h3>
             <hr />
@@ -88,7 +156,7 @@
                 }
             }
         </section>
-    </div>
+    </div> *@
 </div>
 
 @section Scripts {
