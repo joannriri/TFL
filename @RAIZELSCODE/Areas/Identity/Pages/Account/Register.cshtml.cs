@@ -116,8 +116,8 @@ namespace TheFabricsLab.Areas.Identity.Pages.Account
             [Required]
             public string PhoneNumber { get; set; }
 
-            [Required]
-            public bool Gender { get; set; }
+            [Display(Name = "Subscribe to Newsletter?")]
+            public bool NewsletterSubscription { get; set; }
 
         }
 
@@ -134,13 +134,28 @@ namespace TheFabricsLab.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = CreateUser();
+                var user = new AppUser()
+                {
+                    FirstName = Input.FirstName,
+                    LastName = Input.LastName,
+                    UserName = Input.FirstName,
+                    Email = Input.Email,
+                    DateOfBirth = Input.DateOfBirth,
+                    PhoneNumber = Input.PhoneNumber,
+                    NewsletterSubscription = Input.NewsletterSubscription,
+                    CreatedAt = DateTime.Now
+                };
+                //var user = CreateUser();
 
-                user.FirstName = Input.FirstName;
-                user.LastName = Input.LastName;
+                //user.FirstName = Input.FirstName;
+                //user.LastName = Input.LastName;
+                //user.Email = Input.Email;
+                //user.DateOfBirth = Input.DateOfBirth;
+                //user.PhoneNumber = Input.PhoneNumber;
+                //user.Gender = Input.Gender;
 
-                await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
-                await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
+                //await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
+                //await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
                 var result = await _userManager.CreateAsync(user, Input.Password);
 
                 if (result.Succeeded)
