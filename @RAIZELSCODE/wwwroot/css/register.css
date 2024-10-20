@@ -1,0 +1,26 @@
+body {
+    background-color: #02333A;
+}
+
+.form h1, p{
+    color: white;
+    text-align: center;
+}
+
+#newsletter {
+    color: #A89060;
+}
+
+button {
+    width: 100%;
+}
+
+.create {
+    color: white;
+    background-color: #A89060;
+    width: 100%;
+}
+
+.login-link {
+    color: #A89060;
+}
