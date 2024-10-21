@@ -138,7 +138,7 @@ namespace TheFabricsLab.Areas.Identity.Pages.Account
                 {
                     FirstName = Input.FirstName,
                     LastName = Input.LastName,
-                    UserName = Input.FirstName,
+                    UserName = Input.Email,
                     Email = Input.Email,
                     DateOfBirth = Input.DateOfBirth,
                     PhoneNumber = Input.PhoneNumber,
@@ -161,6 +161,9 @@ namespace TheFabricsLab.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
+
+                    //set user role
+                    await _userManager.AddToRoleAsync(user, "manager");
 
                     var userId = await _userManager.GetUserIdAsync(user);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
