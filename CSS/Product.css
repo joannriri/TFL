@@ -1,0 +1,165 @@
+﻿body {
+    background-color: #0C797C;
+    font-family: 'Noto Serif', serif;
+    color: white;
+}
+
+.product-details {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.product-content {
+    display: flex;
+    gap: 20px;
+}
+
+.product-image {
+    max-width: 250px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.product-info {
+    flex: 1;
+}
+
+.product-details h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.product-details h2 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.product-details p {
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+.product-options {
+    margin-top: 20px;
+}
+
+.color-variants {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.variant-option {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.variant-option img {
+    width: 50px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.size-quantity {
+    margin-top: 20px;
+}
+
+.buttons-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-button {
+    background-color: #02333A;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.quantity-input {
+    width: 40px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.add-to-cart {
+    background-color: #02333A;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.add-to-cart:hover {
+    background-color: #A89060;
+}
+
+.favorite-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.favorite-button img {
+    width: 25px;
+    height: 25px;
+}
+
+/*shipping section*/
+.shipping-returns-section {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.shipping-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-family: 'Playfair Display', serif;
+    color: white;
+    font-size: 1.8rem;
+}
+
+.shipping-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.shipping-text {
+    margin-top: 15px;
+    font-size: 1rem;
+    color: white;
+}
+
+.social-media-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+    .social-media-icons img {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+
