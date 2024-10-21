@@ -1,0 +1,40 @@
+body {
+    background-color: #02333A;
+}
+
+.login-header {
+    color: white;
+    text-align: center;
+}
+
+#remember-me {
+    color: #A89060;
+}
+
+button {
+    width: 100%;
+}
+
+.signin {
+    color: white;
+    background-color: #A89060;
+    width: 100%;
+}
+
+#forgot-password{
+    color: white;
+    text-decoration: none;
+}
+
+#forgot-password:hover {
+    color: #A89060;
+    text-decoration: underline;
+}
+
+p{
+    color: white;
+}
+
+.register-link {
+    color: #A89060;
+}
