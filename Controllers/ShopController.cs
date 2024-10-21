@@ -17,7 +17,7 @@ namespace TFL.Controllers
         {
             //retrieve products for seasonal genevieve 
             var products = _context.Products
-                .Where(p => p.CategoryID == 1008)
+                .Where(p => p.CategoryID == 3)
                 .Include(p => p.ProductCategory)
                 .Include(p => p.Discount)
                 .AsQueryable();
@@ -70,7 +70,7 @@ namespace TFL.Controllers
         {
             //retrive products for Qalbi series
             var products = _context.Products
-                .Where(p => p.CategoryID == 1009)
+                .Where(p => p.CategoryID == 4)
                 .Include(p => p.ProductCategory)
                 .Include(p => p.Discount)
                 .AsQueryable();
@@ -116,7 +116,7 @@ namespace TFL.Controllers
         {
             //retrieve products for exclusives
             var products = _context.Products
-                .Where(p => p.CategoryID == 1007)
+                .Where(p => p.CategoryID == 2)
                 .Include(p => p.ProductCategory)
                 .Include (p => p.Discount)
                 .AsQueryable();
@@ -162,7 +162,7 @@ namespace TFL.Controllers
         {
             //retrieve products for exclusives
             var products = _context.Products
-                .Where(p => p.CategoryID == 1006)
+                .Where(p => p.CategoryID == 1)
                 .Include(p => p.ProductCategory)
                 .Include(p => p.Discount)
                 .AsQueryable();
@@ -203,6 +203,30 @@ namespace TFL.Controllers
             ViewBag.ProductCount = products.Count();
             return View("Views/Home/Cotton.cshtml", products.ToList());
 
+        }
+
+        public IActionResult Product(int id)
+        {
+            var product = _context.Products
+                .Include(p => p.ProductCategory)
+                .Include(p => p.Discount)
+                .Include(p => p.Variants)
+                .FirstOrDefault(p => p.ProductID == id);
+            
+            if(product == null)
+            {
+                return NotFound();
+
+            }
+
+            //retrieve product from genevieve series
+            var relatedProducts = _context.Products
+                .Where(p => p.CategoryID == 3 && p.ProductID !=id)
+                .Take(3)
+                .ToList();
+            //pass related product to view using viewbag
+            ViewBag.RelatedProducts = relatedProducts;
+            return View("Views/Home/Product.cshtml", product);
         }
 
     
