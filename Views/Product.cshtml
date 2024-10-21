@@ -1,0 +1,106 @@
+﻿@model TFL.Models.Product
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/css/Product.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+        <title> Product - Genevieve Series </title>
+    </head>
+    <body>
+        <div class="product-details">
+            <div class="product-content">
+                <img src="@Url.Content("~/img/Seasonal/Genevieve/" + Model.ImageFile)" alt="@Model.ProductName" class="product-image" />
+
+                <div class="product-info">
+                    <h1>@Model.ProductName</h1>
+                    <h2>Price: @Model.ProductPrice.ToString("C")</h2>
+                    <p>@Model.Description</p>
+
+                    <!-- Color Variants -->
+                    <div class="product-options">
+                        <h3>Color:</h3>
+                        <div class="color-variants">
+                            @foreach (var variant in Model.Variants)
+                            {
+                                <div class="variant-option">
+                                    <img src="@Url.Content("~/img/Seasonal/Genevieve/" + variant.ImageFile)" alt="@variant.Color" />
+                                    <p>@variant.Color</p>
+                                </div>
+                            }
+                        </div>
+                    </div>
+
+                    <div class="size-quantity">
+                        <p>Size: One size</p>
+                        <div class="button-group">
+                            <button class="quantity-button">-</button>
+                            <input type="text" value="1" class="quantity-input" />
+                            <button class="quantity-button">+</button>
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="favorite-button">
+                                <img src="/img/icons/Favorites Button.png" alt="fav" />
+                            </button>
+                        </div>                       
+                    </div>                    
+                </div>
+            </div>
+        </div>
+        <div class="shipping-returns-section">
+            <div class="shipping-header">
+                <img src="/img/icons/package.png" alt="package" />
+                <h2>Shipping and Returns</h2>
+            </div>
+            <p class="shipping-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lacinia nibh odio, nec eleifend enim mollis tempus. Quisque venenatis blandit dui, vel laoreet dui gravida id. Pellentesque sagittis, nunc eget dignissim ullamcorper, est nulla eleifend mi, ac scelerisque est turpis at erat. Phasellus eu sagittis nulla. Integer nec urna auctor, aliquam nunc ac, tincidunt quam. Proin vel felis sapien. Sed convallis sapien quis nunc tempor, sed cursus nunc pretium. Suspendisse nulla nisl, tincidunt eu pulvinar et, suscipit non augue. Nulla varius ornare justo. Fusce arcu sapien, vulputate ut libero nec, mattis pretium dui. Suspendisse in ante sit amet lectus convallis tincidunt ac a odio. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+                Donec eu ullamcorper tortor. Praesent at ipsum porttitor arcu ullamcorper accumsan. Vestibulum quis lacus ultricies, dictum est nec, bibendum est. Donec felis velit, bibendum ut scelerisque elementum, pulvinar non nunc. Etiam tortor justo, pharetra vitae suscipit non, rhoncus at risus. Ut nec tortor vel nisi cursus accumsan id eu justo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam aliquam elit sit amet augue tincidunt, tincidunt placerat libero iaculis.
+            </p>
+            <div class="social-media-icons">
+                <img src="/img/icons/circle_facebook_.png" alt="fb" />
+                <img src="~/img/icons/circle_instagram_.png" alt="ig" />
+                <img src="/img/icons/circle_imessage_.png" alt="msg" />
+            </div>
+        </div>
+        <!--Recommendations-->
+        <div class="you-may-also-like">
+            <h3>You May Also Like</h3>
+            <div class="related-products">
+                @if (ViewBag.RelatedProducts != null)
+                {
+                    foreach (var item in ViewBag.RelatedProducts)
+                    {
+                        <div class="related-product">
+                            <img src="/img/Seasonal/Genevieve/@item.ImageFile" alt="@item.ProductName" />
+                            <p>@item.ProductName</p>
+                            <span>@item.ProductPrice.ToString("C")</span>
+                        </div>
+                    }
+                }
+             </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+    </body>
+</html>
