@@ -1,5 +1,6 @@
 @model List<Product>
 @{
+    ViewData["Title"] = "Admin";
 }
 
 <h1 class="text-center">Welcome, Admin.</h1>
@@ -7,7 +8,7 @@
 
 <div class="row mb-5">
     <div class="col">
-        <a class="btn btn-primary" asp-controller="User" asp-action="Cretae">Add Product</a>
+        <a class="btn btn-primary" asp-controller="User" asp-action="Create">Add Product</a>
     </div>
     <div class="col">
         
@@ -19,6 +20,7 @@
         <tr>
             <th>ID</th>
             <th>Name</th>
+            <th>Category</th>
             <th>Price</th>
             <th>Image</th>
             <th>Stock</th>
@@ -33,13 +35,14 @@
             <tr>
                 <td>@product.ProductID</td>
                 <td>@product.ProductName</td>
+                <td>@product.CategoryID</td>
                 <td>$@product.ProductPrice</td>
-                <td><img src="/img/Seasonal/Genevieve/@product.ImageFile" width="100"/></td>
+                <td><img src="/img/Catalog/@product.ImageFile" width="100"/></td>
                 <td>@product.Stock</td>
                 <td>@product.CreatedAt.ToString("MM/dd/yyyy")</td>
                 <td style="white-space:nowrap">
                     <a class="btn btn-primary btn-sm" asp-controller="User" asp-action="Edit" asp-route-id="@product.ProductID">Edit</a>
-                    <a class="btn btn-danger btn-sm" asp-controller="User" asp-action="Delete" asp-route-id="@product.ProductID">Delete</a>
+                    <a class="btn btn-danger btn-sm" asp-controller="User" asp-action="Delete" asp-route-id="@product.ProductID" onclick="return confirm('Are you sure?')">Delete</a>
                 </td>
             </tr>
         }
