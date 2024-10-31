@@ -3,57 +3,58 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - layoutDEMO</title>
+    <title>@ViewData["Title"] - TheFabricsLabs</title>
+    <link rel="icon" href="~/img/tfl_logo.png" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/layoutDEMO.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/TheFabricsLab.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-logo mx-auto href="#">
-                    <img src="/img/tfl_logo.png" alt="logo" class="navbar-logo-img" />
-                </a>
+            <div class="container">
+                <a class="navbar-logo mx-auto href="#"><img src="/img/tfl_logo.png" alt="logo" class="navbar-logo-img" /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <div class="navbar-user-container d-flex flex-column align-items-start me-3" id="center">
-                        
-                        <ul class="navbar-nav me-auto d-flex align-items-center">
-                            
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">New Arrivals</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Cotton">Cotton</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Florals">Florals</a>
-                            </li>
-                            
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Exclusives">Exclusives</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Limited Editions">Limited Editions</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Sale">Sale</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!--center logo-->
-                    
-                    <div class="navbar-icons-container d-flex flex-column align-items-end ms-3">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">New Arrivals</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Shop" asp-action="Cotton">Cotton</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Shop" asp-action="SeasonalQalbi">S.Qalbi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Shop" asp-action="SeasonalGenevieve">S.Genevieve</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Shop" asp-action="Limited Editions">Limited Editions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Sale">Sale</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="UserDetails">Account</a>
+                        </li>
+                    </ul>
+                    <partial name="_LoginPartial" />
+                </div>
+                    <!--right icon-->
+                    @* <div class="navbar-icons-container d-flex flex-column align-items-end ms-3">
                         <div class="navbar-icons d-flex">
                             <ul class="navbar-nav">
-                                
+
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Search">
-                                        <img src="/img/User.png" alt="userIcon" class="user-icon-img" />
+                                        <img src="/img/User.png" alt="userIcon" class="navbar-icon" />
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -62,29 +63,24 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Favourites">
-                                        <img src="/img/Heart.png" alt="icon2" class="navbar-icon" />
-                                    </a>
-                                </li>
-                                <li class="nav-item">
                                     <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Cart">
-                                        <img src="~/img/ShoppingBag.png alt="icon3" class="navbar-icon" />
+                                        <img src="~/img/bag.png" alt="icon3" class="navbar-icon" />
                                     </a>
                                 </li>
                             </ul>
+                            
                         </div>
-                        
-                    </div>
+                    </div> *@
                 </div>
             </div>
         </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
-
     <footer class="border-top footer text-muted">
         <div class="container">
             <div class="row">
@@ -99,20 +95,20 @@
                         </span>
                     </div>
                     <div class="d-flex mb-2">
-                        <a href="#" class="mr-3"><img src="/img/facebook_.png" alt="fb" style="width: 24px; height: 24px;" /></a>
-                        <a href="#" class="mr-3"><img src="/img/instagram_.png" alt="ig" style="width: 24px; height: 24px;" /></a>
-                        <a href="#" class="mr-3"><img src="/img/imessage_.png" alt="msg" style="width: 24px; height: 24px;" /></a>
+                        <a href="#" class="mr-3"><img src="/img/fb.png" alt="fb" style="width: 24px; height: 24px;" /></a>&nbsp;
+                        <a href="#" class="mr-3"><img src="/img/ig.png" alt="ig" style="width: 24px; height: 24px;" /></a>&nbsp;
+                        <a href="#" class="mr-3"><img src="/img/message.png" alt="msg" style="width: 24px; height: 24px;" /></a>
                     </div>
                     <small class="copyright">&copy; 2024 - TheFabricsLab</small>
                 </div>
                 <!--right-->
-                <div class="col-md-6 d-flex">
+                <div class="col-md-6 d-flex footer-links">
                     <div class="w-50 pe-3">
                         <h5>Explore</h5>
                         <ul class="list-unstyled">
                             <li><a href="#">Home</a></li>
                             <li><a href="#">Profile</a></li>
-                            <li><a href="#">About Us</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="About">About Us</a></li>
                         </ul>
                     </div>
                     <div class="w-50 d-flex flex-column">
