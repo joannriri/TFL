@@ -1,0 +1,175 @@
+@model TheFabricsLab.Models.SearchViewModel
+@{
+    ViewBag.Title = "Search";
+}
+<style>
+    body {
+        font-family: 'Noto Serif', serif;
+        background-color: #02333A;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+    }
+
+    form{
+        display: flex;
+        align-items: center;
+    }
+
+    .page-title{
+        text-align: center;
+    }
+
+    .search-bar{
+        background-color: #B29F79;
+        color:white;
+    }
+
+    button{
+        background-color: transparent;
+        background-repeat: no-repeat;
+        border: none;
+        cursor: pointer;
+        overflow: hidden;
+        outline: none;
+    }
+
+    .product-count {
+        font-size: 1rem;
+        color: #fff;
+        text-align: center;
+    }
+
+    /* Display products */
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+
+    .product-card {
+        position: relative;
+        overflow: hidden;
+        background-color: transparent;
+        text-align: center;
+    }
+
+        .product-card img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .product-card h4 {
+            margin: 10px 0 0 0;
+            font-family: 'Allura', cursive;
+            color: #fff;
+        }
+
+        .product-card p {
+            margin: 5px 0;
+            color: #fff;
+        }
+
+        .product-card h4,
+        .product-card p {
+            font-family: 'Forum';
+            position: relative;
+            color: #fff;
+            padding: 5px;
+            margin: 0;
+        }
+
+    /* Add to Cart */
+    .add-to-cart {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        color: #fff;
+        background-color: rgba(12, 121, 124, 0.8);
+        padding: 5px 10px;
+        border-radius: 5px;
+        display: none;
+        opacity: 0;
+        transition: opacity 0.3s ease, display 0.3s ease;
+        z-index: 10;
+    }
+
+    .product-card:hover .add-to-cart {
+        display: block;
+        opacity: 1;
+    }
+</style>
+
+<br />
+
+<div>
+    <h2 class="page-title">Search</h2>
+</div>
+
+<br />
+
+<form method="get" asp-action="Search" asp-controller="Shop">
+    <input class="form-control search-bar" type="text" name="searchTerm" value="@Model.SearchTerm" />
+    <button type="submit"><img class="user-nav-icon" src="~/img/Search.png" alt="Search" /></button>
+</form>
+
+<br />
+
+<div class="product-count">
+    <span>@ViewBag.ProductCount result(s) found for "@Model.SearchTerm"</span>
+</div>
+
+<br />
+<br />
+
+<div class="product-grid">
+    @if (Model.Products != null && Model.Products.Any())
+    {
+        @foreach (var product in Model.Products)
+        {
+            <div class="product-card">
+                <img src="@Url.Content("~/img/Catalog/" + product.ImageFile)" alt="@product.ProductName" />
+                <a href="@Url.Action("Product", "Shop", new { id = product.ProductID })" class="add-to-cart">Add to Cart </a>
+                <h4>@product.ProductName</h4>
+                <p>@product.ProductPrice.ToString("C")</p>
+            </div>
+
+        }
+    }
+    else if (Model.SearchTerm != null)
+    {
+        <p>No products found.</p>
+    }
+</div>
+
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
