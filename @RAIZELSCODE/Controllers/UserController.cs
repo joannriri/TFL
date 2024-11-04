@@ -22,16 +22,16 @@ namespace TheFabricsLab.Controllers
             this.environment = environment;
         }
 
-        public async Task<IActionResult> UserDetails()
-        {
-            var user = await userManager.GetUserAsync(User);
-            if (user == null)
-            {
-                return NotFound(); // Handle the case where the user is not found
-            }
+        //public async Task<IActionResult> UserDetails()
+        //{
+        //    var user = await userManager.GetUserAsync(User);
+        //    if (user == null)
+        //    {
+        //        return NotFound(); // Handle the case where the user is not found
+        //    }
 
-            return View(user);
-        }
+        //    return View(user);
+        //}
 
         public IActionResult Admin()
         {
