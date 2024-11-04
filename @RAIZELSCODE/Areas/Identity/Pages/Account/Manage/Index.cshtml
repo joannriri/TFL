@@ -1,0 +1,108 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Profile";
+    ViewData["ActivePage"] = ManageNavPages.Index;
+}
+<style>
+    .detail-box {
+        background-color: whitesmoke;
+        padding: 5%;
+        border-radius: 8px;
+    }
+    .inner-details{
+        padding-left: 5%;
+        padding-top: 2%;
+    }
+</style>
+
+<div class="detail-box">
+    <h3><b>My Details</b></h3>
+    
+    <div class="row">
+        <div class="col-md-6 inner-details">
+            <div>
+                <b>First Name</b>
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.FirstName" class="form-control" placeholder="First Name" disabled />
+                    <label asp-for="Input.FirstName" class="form-label">@Model.appUser?.FirstName</label>
+                </div>
+            </div>
+            <div>
+                <b>Last Name</b>
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.LastName" class="form-control" placeholder="Last Name" />
+                    <label asp-for="Input.LastName" class="form-label">@Model.appUser?.LastName</label>
+                </div>
+            </div>
+            <div>
+                <b>Date of Birth</b> @Model.appUser?.DateOfBirth.ToString("MM/dd/yyyy")
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.LastName" class="form-control" placeholder="Last Name" />
+                    <label asp-for="Input.LastName" class="form-label">@Model.appUser?.DateOfBirth.ToString("MM/dd/yyyy")</label>
+                </div>
+            </div>
+            <div>
+                <b>Phone Number</b> 
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.PhoneNumber" class="form-control" placeholder="Last Name" />
+                    <label asp-for="Input.LastName" class="form-label">@Model.appUser?.PhoneNumber</label>
+                </div>
+            </div>
+            <div>
+                <b>Newsletter Subcription</b> @Model.appUser?.NewsletterSubscription
+                <label asp-for="Input.NewsletterSubscription" class="form-label">
+                    <input class="form-check-input" asp-for="Input.NewsletterSubscription" />&nbsp;
+                    @Html.DisplayNameFor(m => m.Input.NewsletterSubscription)
+                </label>
+            </div>
+            <div>
+                <b>Created At:</b> @Model.appUser?.CreatedAt.ToString("MM/dd/yyyy")
+            </div>
+            @* <form id="profile-form" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Username" class="form-control" placeholder="Please choose your username." disabled />
+                    <label asp-for="Username" class="form-label"></label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.PhoneNumber" class="form-control" placeholder="Please enter your phone number." />
+                    <label asp-for="Input.PhoneNumber" class="form-label"></label>
+                    <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+                </div>
+                <button id="update-profile-button" type="submit" class="w-100 btn btn-lg btn-primary">Save</button>
+            </form> *@
+        </div>
+    </div>
+
+    <br />
+    <br />
+    <br />
+
+    <h3>Purchase History</h3>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
