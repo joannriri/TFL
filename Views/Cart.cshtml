@@ -1,0 +1,82 @@
+﻿@model IEnumerable<TFL.Models.Cart>
+@{
+
+
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/Cart.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+    <title> TFL - Cart </title>
+</head>
+<body>
+    <div class="cart-container">
+        <h1 class="cart-title">Your Cart</h1>
+        <div class="cart-header">
+            <span class="header-label">Product Name</span>
+            <span class="header-label">Quantity</span>
+            <span class="header-label">Total</span>
+        </div>
+
+        @foreach (var item in Model)
+        {
+            <div class="cart-item">
+                <img src="@Url.Content("~/img/Seasonal/Genevieve/" + item.Image)" alt="@item.ProductName" class="product-img" />
+                <div class="product-details">
+                    <p class="product-name">@item.ProductName</p>
+                    <p class="product-type">@item.Variants.Color</p>
+                </div>
+                <div class="button-group">
+                    <form method="post" asp-action="UpdateCart">
+                        <input type="hidden" name="cartId" value="@item.CartID" />
+                        <input type="number" name="quantity" value="@item.Quantity" min="0" />
+                        <button type="submit">Update</button>
+                    </form>
+                    <form method="post" asp-action="RemoveFromCart">
+                        <input type="hidden" name="cartId" value="@item.CartID" />
+                        <button type="submit">Remove</button>
+                    </form>
+                </div>
+                <span class="cart-total">@item.Total.ToString("C")</span>
+            </div>
+        }
+        <div class="shop-more">
+            <a href="@Url.Action("SeasonalGenevieve", "Shop")" class="shop-more-btn">Shop More</a>
+        </div>
+        <div class="cart-summary">
+            <span class="total-text">Total:</span>
+            <span class="total-amount">@((Model as IEnumerable<TFL.Models.Cart>).Sum(i => i.Total).ToString("C"))</span>
+
+        </div>
+        <form method="get" asp-controller="Home" asp-action="Checkout">
+            <button type="submit" class="checkout-btn">Checkout</button>
+        </form>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</body>
+</html>
