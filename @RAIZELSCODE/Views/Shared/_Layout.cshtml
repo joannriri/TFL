@@ -16,7 +16,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-logo mx-auto href="#"><img src="/img/tfl_logo.png" alt="logo" class="navbar-logo-img" /></a>
+                <a class="navbar-logo mx-auto" asp-controller="Home" asp-action="Index"><img src="/img/tfl_logo.png" alt="logo" class="navbar-logo-img" /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -40,9 +40,6 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Sale">Sale</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="UserDetails">Account</a>
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />
@@ -99,7 +96,7 @@
                         <a href="#" class="mr-3"><img src="/img/ig.png" alt="ig" style="width: 24px; height: 24px;" /></a>&nbsp;
                         <a href="#" class="mr-3"><img src="/img/message.png" alt="msg" style="width: 24px; height: 24px;" /></a>
                     </div>
-                    <small class="copyright">&copy; 2024 - TheFabricsLab</small>
+                    <small class="copyright">&copy; 2024 - TheFabricsLab - <a asp-controller="Home" asp-action="TermsOfService">Terms of Service</a> - <a asp-controller="Home" asp-action="Privacy">Privacy Policy</a></small>
                 </div>
                 <!--right-->
                 <div class="col-md-6 d-flex footer-links">
