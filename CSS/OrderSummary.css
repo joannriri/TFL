@@ -1,0 +1,230 @@
+﻿/* Order Summary Page */
+.order-summary-page {
+    font-family: 'Noto Serif', serif;
+    background: linear-gradient(to bottom, #0C797C, #02333A); /* Gradient background */
+    color: #fff;
+    padding: 20px;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Logo */
+.text-center img {
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+
+/* Order Summary Title */
+h1.Playfair-display {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: #fff; /* White color for the title */
+    margin-bottom: 20px;
+}
+
+/* Divider */
+hr {
+    border: 1px solid #fff; /* White divider */
+    margin: 20px 0;
+}
+
+/* Greeting (Hi, User) */
+.text-center h2 {
+    font-family: 'Playfair Display', serif; /* Change font to Playfair Display */
+    font-size: 40px; /* Make it larger */
+    color: #fff; /* White color for greeting */
+    margin-bottom: 20px;
+}
+
+/* Greeting Text Below */
+.text-center p {
+    font-size: 16px;
+    color: #fff;
+}
+
+/* View Order Button */
+.btn-view-order {
+    background-color: #02333A;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+    .btn-view-order:hover {
+        background-color: #0c797c;
+    }
+
+/* Order Card */
+/* Order Card */
+.order-card {
+    background-color: #02333A; /* Card background color */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    color: #fff; /* White text inside the card */
+    width: 50%; /* Make the card narrower */
+    max-width: 500px; /* Maximum width for larger screens */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left; /* Left align content */
+}
+
+
+    /* Order Card Title */
+    .order-card h3 {
+        font-family: 'Forum', sans-serif;
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    /* Order Confirmation Number */
+    .order-card h3 {
+        text-align: center; /* Centered confirmation number */
+    }
+
+/* Order Item Section */
+.order-item {
+    margin-bottom: 20px;
+}
+
+.product-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Aligns the product info and total at the top */
+    margin-bottom: 20px;
+}
+
+.product-image img {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.product-info {
+    flex-grow: 1;
+    margin-left: 20px;
+    text-align: left; /* Left align product name and details */
+}
+
+    .product-info p {
+        margin: 5px 0;
+    }
+
+    .product-info strong {
+        font-size: 16px;
+    }
+
+.product-total {
+    text-align: right; /* Right align the total price */
+    width: 120px; /* Set width for consistent alignment */
+    font-size: 16px;
+}
+
+/* Shipping and Subtotal Section */
+.shipping-subtotal {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: center; /* Vertically center align items */
+}
+
+    .shipping-subtotal .left,
+    .shipping-subtotal .right {
+        width: 48%;
+    }
+
+    .shipping-subtotal p {
+        margin: 5px 0;
+    }
+
+    .shipping-subtotal strong {
+        font-size: 16px;
+    }
+
+/* Order Date and Total Section */
+.order-date-total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+    .order-date-total .left,
+    .order-date-total .right {
+        width: 48%;
+    }
+
+    .order-date-total p {
+        margin: 5px 0;
+    }
+
+    .order-date-total strong {
+        font-size: 16px;
+    }
+
+/* Close Text */
+.text-center p {
+    cursor: pointer;
+    color: #fff; /* White color for the close text */
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+    .text-center p:hover {
+        text-decoration: underline;
+    }
+
+/* Go Back Home Link */
+.text-center a {
+    color: #fff; /* White color for the link */
+    font-size: 16px;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+    .text-center a:hover {
+        text-decoration: underline;
+    }
+
+/* Navigation fixes */
+nav {
+    background-color: #02333A;
+    padding: 10px 0;
+    color: #fff;
+    text-align: center;
+}
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        font-family: 'Playfair Display', serif;
+        margin: 0 15px;
+        font-size: 18px;
+    }
+
+        nav a:hover {
+            color: #0C797C;
+        }
+
+/* Footer fixes */
+footer {
+    background-color: #02333A;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+    footer a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+
+        footer a:hover {
+            color: #0C797C;
+        }
