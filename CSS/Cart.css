@@ -1,0 +1,158 @@
+﻿body {
+    background-color: #02333A;
+    font-family: 'Playfair Display', serif;
+}
+
+.cart-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #0C797C; /* Optional: Can keep or change as needed */
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+}
+
+.cart-title {
+    font-size: 32px;
+    text-align: left; /* Align title to the left */
+    margin-bottom: 30px;
+    color: white;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border-bottom: 1px solid white; /* Divider line */
+    padding-bottom: 10px; /* Spacing under header */
+}
+
+.header-label {
+    flex: 1;
+    text-align: center; /* Center align header labels */
+    font-weight: bold;
+    color: white;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid white; /* Divider line */
+}
+
+.product-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.product-details {
+    flex: 2;
+    margin-left: 20px;
+    color: white;
+}
+
+.product-name {
+    font-size: 18px;
+    font-family: 'Forum', serif;
+    margin-bottom: 5px;
+}
+
+.product-type {
+    font-size: 14px;
+    color: white; /* Ensure it is white */
+}
+
+.button-group {
+    display: flex; /* Flexbox for button alignment */
+    align-items: center; /* Center the buttons vertically */
+    gap: 10px; /* Space between buttons */
+}
+
+.quantity-form, .remove-form {
+    display: flex;
+    align-items: center;
+}
+
+input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    text-align: center;
+}
+
+button {
+    background-color: #A89060; /* Color for Update/Remove buttons */
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+    button:hover {
+        background-color: #8b764d; /* Darker shade for hover */
+    }
+
+.cart-total {
+    font-size: 18px;
+    font-weight: bold;
+    flex: 1;
+    text-align: right;
+    color: white;
+}
+
+.cart-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-top: 1px solid white; /* Divider line */
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.total-text, .total-amount {
+    font-size: 22px;
+    font-weight: bold;
+    color: white; /* Ensure these are white */
+}
+
+.checkout-btn {
+    background-color: #095d5f; /* Checkout button */
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    font-size: 18px;
+    cursor: pointer;
+    display: block;
+    margin: 30px auto;
+}
+
+.shop-more {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.shop-more-btn {
+    color: white; /* Shop button color */
+    text-decoration: none; /* Remove underline */
+    background: none; /* No background */
+    border: none; /* No border */
+    cursor: pointer;
+}
+
+/* Ensure spacing for dividers and overall layout */
+.divider {
+    border-top: 1px solid white; /* Divider line */
+    margin: 20px 0; /* Spacing around the divider */
+}
