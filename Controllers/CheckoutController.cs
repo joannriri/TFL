@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Drawing;
 using System.Linq;
 using TFL.Areas.Identity.Data;
 using TFL.Models;
@@ -36,6 +37,40 @@ namespace TFL.Controllers
             return View(viewModel);
         }
 
+        [HttpGet]
+        public IActionResult OrderSummary(int orderId) 
+        {
+            //fetch orderdetails based on orderid
+            var order = _context.Orders
+                .Include(o => o.OrderDetails)                
+                .FirstOrDefault(o => o.OrderID == orderId);
+            if(order == null)
+            {
+                return NotFound();
+            }
+            var orderDetails = order.OrderDetails
+                .Select(d => new OrderItemViewModel
+                {
+                ProductName = d.ProductName,
+                Color = _context.ProductVariants.FirstOrDefault(v => v.VariantID == d.VariantID)?.Color,
+                Quantity = d.Quantity,
+                LineTotal = d.Quantity * d.UnitPrice,
+                ImageFile = d.ImageFile
+                }).ToList();
+
+            var viewModel = new OrderSummaryViewModel
+            {
+                OrderID = order.OrderID,
+                OrderDate = order.OrderDate,
+                FirstName = order.FirstName,
+                OrderTotal = order.OrderTotal,
+                ShippingFee = order.ShippingFee,
+                DeliveryMethod = order.DeliveryMethod,
+                ShippingAddress = order.ShippingAddress,
+                OrderDetails = orderDetails                
+            };
+            return View(viewModel);
+        }
         [HttpPost]
         public IActionResult SubmitOrder(CheckoutView model)
         {
@@ -143,7 +178,7 @@ namespace TFL.Controllers
                 _context.Carts.RemoveRange(_context.Carts);
                  _context.SaveChanges();
 
-                return RedirectToAction("OrderSummary");
+                return RedirectToAction("OrderSummary", new { orderId = order.OrderID });
             }
 
             return View("Checkout", model);
