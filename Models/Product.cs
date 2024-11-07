@@ -6,7 +6,9 @@ namespace TFL.Models
 {
     public class Product
     {
-        [Key] public int ProductID { get; set; }
+        [Key]
+        public int ProductID { get; set; }
+        [Required]
         public string ProductName { get; set; }
         [Required]
         public int CategoryID { get; set; }
@@ -23,6 +25,8 @@ namespace TFL.Models
         [ForeignKey("DiscountID")]
         public virtual Discount Discount { get; set; }
         public int Stock { get; set; }
+        public int Quantity { get; set; }
 
+        public virtual ICollection<ProductVariants> Variants { get; set; }
     }
 }
