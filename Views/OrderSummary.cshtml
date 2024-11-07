@@ -1,0 +1,102 @@
+﻿@model TFL.ViewModels.OrderSummaryViewModel
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/css/OrderSummary.css" />
+        <link rel="stylesheet" href="/css/site.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+        <title> Order Summary </title>
+    </head>
+    <body class="order-summary-page">
+        <!--logo-->
+        <div class="text-center">
+            <img src="/img/icons/tfl_logo.png" alt="logo" />
+        </div>
+
+        <!--order summary title-->
+        <div class="text-center">
+            <h1 class="Playfair-display">Order Summary</h1>
+
+        </div>
+        <!--divider-->
+        <hr />
+
+        <!--greeting-->
+        <div class="text-center">
+            <h2>Hi, User</h2>
+            <p>Your item is secured, Thank you!</p>
+        </div>
+
+        <!--view order btn-->
+        <div class="text-center">
+            <button class="btn-view-order">
+                View Order
+            </button>
+        </div>
+        <div class="order-card">
+            <h3>Order Confirmation Number: #@Model.OrderID</h3>
+            <!-- Order Item Section -->
+            <div class="order-item">
+                @foreach (var item in Model.OrderDetails)
+                {
+                    <div class="product-details">
+                        <div class="product-image">
+                            <img src="@Url.Content("~/img/Seasonal/Genevieve/" + item.ImageFile)" alt="@item.ProductName" width="80px" height="80px" />
+                            
+                        </div>
+                        <div class="product-info">
+                            <p><strong>@item.ProductName</strong></p>
+                            <p>Color: @item.Color</p>
+                            <p>Quantity: @item.Quantity</p>
+                            <p class="total">Total: @item.LineTotal.ToString("C")</p>
+                        </div>
+                    </div>
+                    <hr> <!-- Divider between products -->
+                }
+            </div>
+            <!-- Shipping and Subtotal Section -->
+            <div class="shipping-subtotal">
+                <div class="left">
+                    @if (Model.DeliveryMethod == "shipment")
+                    {
+                        <p><strong>Shipping Address:</strong></p>
+                        <p>@Model.ShippingAddress</p>
+                    }
+                    else
+                    {
+                        <p><strong>Store Pickup Address:</strong></p>
+                        <p>Spg 66, Unit 18 1st Floor Block C, Berakas Centre, Kpg Serusop, Jalan Berakas</p>
+                    }
+                </div>
+                <div class="right">
+                    <p><strong>Shipping Fee:</strong> @Model.ShippingFee.ToString("C")</p>
+                    <p><strong>Subtotal:</strong> @Model.OrderTotal.ToString("C")</p>
+                </div>
+            </div>
+            <!-- Order Date and Total Section -->
+            <div class="order-date-total">
+                <div class="left">
+                    <p><strong>Order Date:</strong> @Model.OrderDate.ToString("MMMM dd, yyyy")</p>
+                </div>
+                <div class="right">
+                    <p><strong>Total:</strong> @Model.OrderTotal.ToString("C")</p>
+                </div>
+            </div>
+        </div>
+        <!-- Close Text -->
+        <div class="text-center">
+            <p onclick="window.close()">Close</p>
+        </div>
+
+        <!-- Go Back Home Text -->
+        <div class="text-center">
+            <a asp-controller="Home" asp-action="Index">Go Back Home</a>
+        </div>    
+    </body>
+</html>
+
