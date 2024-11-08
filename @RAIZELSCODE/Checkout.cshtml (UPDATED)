@@ -1,0 +1,207 @@
+@model TheFabricsLab.Models.ViewModel.CheckoutViewModel
+
+@{
+    ViewData["Title"] = "Checkout";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/Checkout.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+    <script src="/js/Checkout.js" defer></script>
+    <title>Checkout</title>
+    <style>
+       body {
+            background: linear-gradient(to bottom, #0C797C, #02333A);
+        }
+        /* hide actual radio buttons */
+        input[type="radio"] {
+            display: none;
+        }
+
+        /* style LABELS as boxes */
+        .payment-select label {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* when user clicks on radio box */
+        .payment-select input[type="radio"]:checked + label {
+            background-color: #007bff;
+            color: white;
+            border-color: #0056b3;
+        }
+
+        /* hover */
+        .payment-select label:hover {
+            background-color: #f0f0f0;
+            border-color: #888;
+        }
+
+        /* Disabled state */
+        .payment-select input[type="radio"]:disabled + label {
+            background-color: #f5f5f5;
+            color: #ccc;
+            cursor: not-allowed;
+        }
+
+    </style>
+</head>
+<body>
+    <form asp-controller="Checkout" method="post" asp-action="SubmitOrder">
+        <div class="checkout-page">
+            <div class="checkout-left">
+                <!-- Contact Section -->
+                <h2 class="section-title">Contact</h2>
+                <input type="email" name="Email" class="input-field" placeholder="Email" required asp-for="Email" />
+                <input type="tel" name="PhoneNumber" class="input-field" placeholder="Phone Number" required asp-for="PhoneNumber" />
+
+                <!-- Delivery Section -->
+                <h2 class="section-title">Delivery</h2>
+                <div class="delivery-option">
+                    <label class="delivery-select box" data-value="shipping">
+                        <span>Shipping</span>
+                        <img src="/img/icons/Truck.png" alt="shipping-icon" class="icon" />
+                    </label>
+                    <div class="shipping-details hidden">
+                        <select name="Country" class="input-field" asp-for="Country">
+                            <option value="">Country/Region</option>
+                            <option value="Brunei Darussalam">Brunei Darussalam</option>
+                        </select>
+                        <div class="input-row">
+                            <input type="text" name="FirstName" class="input-field" placeholder="First Name" asp-for="FirstName" />
+                            <input type="text" name="LastName" class="input-field" placeholder="Last Name" asp-for="LastName" />
+                        </div>
+                        <input type="text" name="ShippingAddress" class="input-field" placeholder="Address 1" asp-for="ShippingAddress" />
+                        <input type="text" name="ShippingAddress2" class="input-field" placeholder="Address 2" />
+                        <div class="input-row">
+                            <input type="text" name="City" class="input-field" placeholder="City" asp-for="City" />
+                            <input type="text" name="PostalCode" class="input-field" placeholder="Postal Code" asp-for="PostalCode" />
+                        </div>
+                        <label class="checkbox-save">
+                            <input type="checkbox" />
+                            Save address for next time
+                        </label>
+                    </div>
+                    <label class="delivery-select box" data-value="store-pickup">
+                        <span>Store Pick-up</span>
+                        <img src="/img/icons/GoldHome.png" alt="store-icon" class="icon" />
+                    </label>
+                    <div class="store-pickup-details hidden">
+                        <h3 class="subsection-title">Store Location</h3>
+                        <select class="input-field" name="StoreLocation" asp-for="DeliveryMethod">
+                            <option value="">Select Store Location</option>
+                            <option value="Spg 66, Unit 18 1st Floor Block C, Berakas Centre, Kpg Serusop, Jalan Berakas">Spg 66, Unit 18 1st Floor Block C, Berakas Centre, Kpg Serusop, Jalan Berakas</option>
+                        </select>
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d993.7372801412514!2d114.94291073627589!3d4.948115603554676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNMKwNTYnNTEuOSJOIDExNMKwNTYnMzYuOSJF!5e0!3m2!1sms!2sbn!4v1728892134453!5m2!1sms!2sbn" width="600" height="450" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Section -->
+                <h2 class="section-title">Payment Method</h2>
+                <p class="note">*For bank transfer, please send proof of payment within 1 hour to this contact (+673 8911568). Order will be cancelled if payment is not received within this hour. Cash is only applicable for Store Pick-Up.</p>
+
+                <div class="payment-container">
+                    <div class="payment-options">
+                        <div class="payment-select bank-transfer box">
+                            <input type="radio" id="bank-transfer" name="PaymentMethod" value="Bank Transfer" asp-for="PaymentMethod" />
+                            <label for="bank-transfer">Bank Transfer</label>
+                        </div>
+
+                        <div class="payment-select cash-pay box">
+                            <input type="radio" id="cash-pay" name="PaymentMethod" value="Cash Payment" asp-for="PaymentMethod" />
+                            <label for="cash-pay">Cash Payment</label>
+                        </div>
+
+                    </div>
+
+                    <div class="bank-details hidden">
+                        <label class="note" for="bank-select">Select Your Bank:</label>
+                        <select id="bank-select" asp-for="BankSelect" name="BankSelect" class="input-field">
+                            <option value="">Choose a bank...</option>
+                            <option value="BIBD">BIBD - 00001010071861<br />THEFABRICLABS<br />Please Remark: TFL For Payment</option>
+                            <option value="TAIB">TAIB - 006501659801015<br />Please Remark: TFL For Payment</option>
+                            <option value="BAIDURI">BAIDURI - 0900740491725<br />Please Remark: TFL For Payment</option>
+                        </select>
+                    </div>
+
+                    <div class="cash-details hidden">
+                        <label class="note">Your item will be ready in 1-3 days. Please present your receipt to the cashier.</label>
+                    </div>
+                </div>
+            </div>
+            <!-- Cart Summary Section -->
+            <div class="checkout-right" style="background-color:#AAD0D1">
+                @* <h2 class="section-title-cartsum">Cart Summary</h2> *@
+                @if (Model != null && Model.CartItems != null && Model.CartItems.Any())
+                {
+                    <ul class="cart-items">
+                        @foreach (var item in Model.CartItems)
+                        {
+                            <li class="cart-item">
+                                <img src="@Url.Content("~/img/Catalog/" + item.Image)" alt="@item.ProductName" width="80px" height="80px" />
+                                <div class="product-details">
+                                    <p class="product-name">Product: @item.ProductName</p>
+                                    <p class="product-type">Color: @item.Variants?.Color</p>
+                                    <p class="product-quantity">Quantity: @item.Quantity</p>
+                                    <span class="cart-total">@item.Total.ToString("C")</span>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                    <div class="cart-summary">
+                        <span class="total-text">Total:</span>
+                        <span class="total-amount">@Model.TotalAmount.ToString("C")</span>
+                    </div>
+                    <input type="hidden" name="TotalAmount" value="@Model.TotalAmount" />
+                    <button type="submit" class="place-order-btn">Place Order</button>
+
+                }
+                else
+                {
+                    <p class="exception-note">No items in the cart.</p>
+                }
+            </div>
+        </div>
+    </form>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</body>
+</html>
