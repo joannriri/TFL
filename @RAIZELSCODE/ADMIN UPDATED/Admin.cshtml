@@ -2,16 +2,17 @@
 @{
     ViewData["Title"] = "Admin";
 }
+
 <style>
-    body{
+    body {
         background: linear-gradient(to bottom, #0C797C, #02333A);
     }
 
-    .header-text{
+    .header-text {
         color: white;
     }
 
-    .add-product{
+    .add-product {
         color: white;
         background-color: #A89060;
         width: 150px;
@@ -21,6 +22,24 @@
         background-color: whitesmoke;
         padding: 5%;
         border-radius: 8px;
+    }
+
+    .search-bar {
+        width: 80%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .search-button {
+        width: 15%;
+        padding: 10px;
+        background-color: #A89060;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
     }
 </style>
 
@@ -36,9 +55,12 @@
 <div class="detail-box">
     <div class="row mb-5">
         <div class="col">
+            <a class="btn add-product" asp-controller="User" asp-action="AdminVar">Manage Variants</a>&nbsp;&nbsp;&nbsp;
             <a class="btn add-product" asp-controller="User" asp-action="Create">Add Product</a>
         </div>
         <div class="col">
+            <input type="text" id="nameSearch" class="search-bar" placeholder="Search by name...">
+            <button class="search-button" onclick="filterTable()">Search</button>
         </div>
     </div>
 
@@ -59,7 +81,7 @@
             </tr>
         </thead>
 
-        <tbody>
+        <tbody id="productTable">
             @foreach (var product in Model)
             {
                 <tr>
@@ -104,3 +126,26 @@
 <br />
 <br />
 <br />
+
+<script>
+    // filter table by color
+    function filterTable() {
+        const input = document.getElementById('nameSearch');
+        const filter = input.value.toLowerCase();
+        const table = document.getElementById('productTable');
+        const rows = table.getElementsByTagName('tr');
+
+        // return search results
+        for (let i = 0; i < rows.length; i++) {
+            const nameCell = rows[i].getElementsByTagName('td')[1]; // [1] is for table column. goes by 0,1,2, onwards
+            if (nameCell) {
+                const nameText = nameCell.textContent || nameCell.innerText;
+                if (nameText.toLowerCase().includes(filter)) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>
