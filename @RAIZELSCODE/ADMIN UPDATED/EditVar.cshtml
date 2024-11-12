@@ -1,0 +1,114 @@
+@model ProductVarDto
+@{
+    ViewData["Title"] = "Edit Variant";
+}
+<style>
+    body {
+        background: linear-gradient(to bottom, #0C797C, #02333A);
+    }
+
+    .header-text {
+        color: white;
+    }
+
+    .detail-box {
+        background-color: whitesmoke;
+        padding: 5%;
+        border-radius: 8px;
+    }
+
+    .submit-button {
+        color: white;
+        background-color: #A89060;
+        width: 100%;
+    }
+</style>
+
+<br />
+<br />
+<br />
+<h2 class="text-center mb-5 header-text">Edit Variant</h2>
+
+<div class="detail-box">
+    <div class="row">
+        <div class="col-md-8 mx-auto p-3">
+
+
+            <form method="post" enctype="multipart/form-data">
+                <div class="row mb-3">
+                    <label class="col-sm-4 col-form-label">ProductID</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" asp-for="ProductID" />
+                        <span asp-validation-for="ProductID" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label class="col-sm-4 col-form-label">Color</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" asp-for="Color" />
+                        <span asp-validation-for="Color" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label class="col-sm-4 col-form-label">Price</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" asp-for="Price" />
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label class="col-sm-4 col-form-label">Image</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" asp-for="ImageFile" />
+                        <span asp-validation-for="ImageFile" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="offset-sm-4 col-sm-8">
+                        <img src="/img/Catalog/@ViewData["ImageFileName"]" width="150" />
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label class="col-sm-4 col-form-label">Stock</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" asp-for="Stock" />
+                        <span asp-validation-for="Stock" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="offset-sm-4 col-sm-4 d-grid">
+                        <button type="submit" class="btn submit-button">Submit</button>
+                    </div>
+                    <div class="col-sm-4 d-grid">
+                        <a class="btn btn-outline-primary" asp-controller="User" asp-action="AdminVar" role="button">Cancel</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
